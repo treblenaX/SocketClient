@@ -1,0 +1,7 @@
+{
+    "title": "TCP Socket Client",
+    "files": [
+        "markdown/socket_client.md",
+        "markdown/logging.md"
+    ]
+}
