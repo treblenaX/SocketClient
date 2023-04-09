@@ -1,6 +1,6 @@
 import json
 
-config_file_stream = open('md_index.json')
+config_file_stream = open('config.json')
 
 config_data = json.load(config_file_stream)
 
