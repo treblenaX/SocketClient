@@ -22,21 +22,17 @@ public class SocketThread extends Thread {
 
         host = args[0];
         port = Integer.parseInt(args[1]);
-
-        LOGGER.fine(IDENTITY + "Host: " + host + ", Port: " + port);
     }
 
     public void run() {
-        LOGGER.fine(IDENTITY + "SocketThread started! Connecting to server...");
+        LOGGER.fine(IDENTITY + "STARTING - SocketThread - " + host + ":" + port + "...");
 
         try {
             synchronized (this) {
-                LOGGER.fine(IDENTITY + "Opening socket...");
-    
                 sock = new Socket(host, port);
                 in = sock.getInputStream();
     
-                LOGGER.fine(IDENTITY + "Socket connection successful!");
+                LOGGER.fine(IDENTITY + "CONN_SUCCESS - SocketThread - " + host + ":" + port + "...");
     
                 int readChar;
                 StringBuilder data = new StringBuilder();
@@ -48,24 +44,17 @@ public class SocketThread extends Thread {
                 String outputData = data.toString();
                 dataPayload.setData(outputData);
     
-                LOGGER.info(IDENTITY + "Message received: " + outputData);
+                LOGGER.info(IDENTITY + "RECEIVED - " + outputData);
                 
-                notify();
-                destroy();
+                notify();   // let the other thread know that the data is there.
+
+                sock.close();
+                in.close();
+
+                LOGGER.fine(IDENTITY + "EXIT - SocketThread");
             }
         } catch (Exception e) {
-            LOGGER.severe(e.toString());
-        }
-    }
-
-
-    public void destroy() {
-        try {
-            sock.close();
-            in.close();
-            LOGGER.fine(IDENTITY + "Closing socket...");
-        } catch (IOException e) {
-            LOGGER.severe(e.toString());
+            LOGGER.severe(e.getMessage());
         }
     }
 }

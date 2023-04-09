@@ -1,6 +1,6 @@
 <!-- space needed -->
 
-# Write a SocketClient in Java
+# Write a SocketClient in Java (now updated with `InteractiveTCPClient.java`)
 
     Write a Java app that will
 
