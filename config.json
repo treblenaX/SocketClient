@@ -1,6 +1,7 @@
 {
     "title": "TCP Socket Client",
     "files": {
+        "markdown/run.md": "How to Run",
         "markdown/socket_client.md": "Socket Client",
         "markdown/logging.md": "Logging",
         "markdown/threading.md": "Threading"

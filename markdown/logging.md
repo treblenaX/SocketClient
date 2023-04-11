@@ -35,9 +35,9 @@ I added a LOGGER to my application and printed out the exact actions that the pr
 
 There are two main command flags that I implemented: 
 
-    java TCPClient.java [url] [port] -i/I   // INFO/SEVERE logs will be printed
-    java TCPClient.java [url] [port] -f/F   // FINE (debug)/INFO/SEVERE logs will be printed
-    java TCPClient.java [url] [port]        // SEVERE only logs will be printed
+    java TCPClient.java <url> <port> -i/I   // INFO/SEVERE logs will be printed
+    java TCPClient.java <url> <port> -f/F   // FINE (debug)/INFO/SEVERE logs will be printed
+    java TCPClient.java <url> <port>        // SEVERE only logs will be printed
 
 ### (default/no flags) `java TCPClient.java djxmmx.net 17` for SEVERE only logs.
 

@@ -1,6 +1,6 @@
 <!-- space needed -->
 
-# Write a SocketClient in Java (now updated with `InteractiveTCPClient.java`)
+# Write a SocketClient in Java (now with an upgraded application called `InteractiveTCPClient.java`)
 
     Write a Java app that will
 
@@ -16,7 +16,7 @@
 
     In each case, capture the shell session in a video or text file, and put those files into the GitHub repository containing your code.
 
-## `server djxmmx.net / port 17`
+## `djxmmx.net / port 17`
 
     elbertcheng$ java TCPClient.java djxmmx.net 17
     "On this day, I see clearly, everything has come to life.
@@ -24,13 +24,13 @@
     On this day, it's so real to me, everything has come to life.
     Another chance, to chase a dream, another chance to feel, chance to feel alive..."
 
-## `server time.nist.gov / port 13`
+## `time.nist.gov / port 13`
 
     elbertcheng$ java TCPClient.java time.nist.gov 13
 
     60043 23-04-09 02:06:51 50 0 0 132.3 UTC(NIST) * 
 
-## `server tcpbin.com / port 4242` - doesn't return anything but Ted said it was fine!
+## `tcpbin.com / port 4242` - doesn't return anything but Ted said it was fine!
 
     elbertcheng$ java TCPClient.java tcpbin.com 4242
 

@@ -1,14 +1,12 @@
 <!-- space -->
 
-# Threading
+# Threading - `InteractiveTCPClient.java`
 
     Make your client interactive: Users can type at the console and the input goes down the socket
     TIP: you will need to have two Threads:
     one Thread handles command-line I/O (System.in, System.out)
     second Thread handles socket I/O
     Somehow those Threads need to talk to one another
-
-> Take a look at `InteractiveTCPClient.java` instead of `TCPClient.java`!
 
 So I made two threads `IOThread.java` and `SocketThread.java`.
 
@@ -18,7 +16,9 @@ So I made two threads `IOThread.java` and `SocketThread.java`.
 
 The two threads pass data with other by manipulating the `DataPayload.java` object. 
 
-## `java InteractiveTCPClient.java -f`example
+This also supports flags! (-i/-f)
+
+## `java InteractiveTCPClient.java`
 
     elbertcheng$ javac InteractiveTCPClient.java ; javac threading/IOThread.java ; javac threading/SocketThread.java ; javac threading/DataPayload.java ; java InteractiveTCPClient.java
     Welcome to the Interactive TCP Client!
@@ -42,3 +42,5 @@ The two threads pass data with other by manipulating the `DataPayload.java` obje
     exit
 
     Exiting the application! Goodbye!
+
+## `java InteractiveTCPClient.java -f`
