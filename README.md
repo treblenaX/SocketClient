@@ -1,10 +1,28 @@
 <h1>TCP Socket Client</h1>
 <p>Please check the individual markdown files or refer to the dropdowns below...</p>
 <details>
+                <summary>How to Run</summary>
+                    <!-- space -->
+
+# Building and running the `Socket Client`/`Logging` exercises:
+
+    javac TCPClient.java ; java TCPClient.java <host> <port> <flag>
+
+>Example command - requesting from djxmmx.net 17
+
+    javac TCPClient.java ; java TCPClient.java djxmmx.net 17
+
+# Building and running the `Threading` exercise:
+
+    javac threading/SocketThread.java ; javac threading/IOThread.java ; javac threading/DataPayload.java ; javac InteractiveTCPClient.java ; java InteractiveTCPClient.java
+
+>Then you can interact with the application in the console!
+</details>
+<details>
                 <summary>Socket Client</summary>
                     <!-- space needed -->
 
-# Write a SocketClient in Java (now updated with `InteractiveTCPClient.java`)
+# Write a SocketClient in Java (now with an upgraded application called `InteractiveTCPClient.java`)
 
     Write a Java app that will
 
@@ -20,7 +38,7 @@
 
     In each case, capture the shell session in a video or text file, and put those files into the GitHub repository containing your code.
 
-## `server djxmmx.net / port 17`
+## `djxmmx.net / port 17`
 
     elbertcheng$ java TCPClient.java djxmmx.net 17
     "On this day, I see clearly, everything has come to life.
@@ -28,13 +46,13 @@
     On this day, it's so real to me, everything has come to life.
     Another chance, to chase a dream, another chance to feel, chance to feel alive..."
 
-## `server time.nist.gov / port 13`
+## `time.nist.gov / port 13`
 
     elbertcheng$ java TCPClient.java time.nist.gov 13
 
     60043 23-04-09 02:06:51 50 0 0 132.3 UTC(NIST) * 
 
-## `server tcpbin.com / port 4242` - doesn't return anything but Ted said it was fine!
+## `tcpbin.com / port 4242` - doesn't return anything but Ted said it was fine!
 
     elbertcheng$ java TCPClient.java tcpbin.com 4242
 
@@ -78,9 +96,9 @@ I added a LOGGER to my application and printed out the exact actions that the pr
 
 There are two main command flags that I implemented: 
 
-    java TCPClient.java [url] [port] -i/I   // INFO/SEVERE logs will be printed
-    java TCPClient.java [url] [port] -f/F   // FINE (debug)/INFO/SEVERE logs will be printed
-    java TCPClient.java [url] [port]        // SEVERE only logs will be printed
+    java TCPClient.java <url> <port> -i/I   // INFO/SEVERE logs will be printed
+    java TCPClient.java <url> <port> -f/F   // FINE (debug)/INFO/SEVERE logs will be printed
+    java TCPClient.java <url> <port>        // SEVERE only logs will be printed
 
 ### (default/no flags) `java TCPClient.java djxmmx.net 17` for SEVERE only logs.
 
@@ -112,15 +130,13 @@ There are two main command flags that I implemented:
                 <summary>Threading</summary>
                     <!-- space -->
 
-# Threading
+# Threading - `InteractiveTCPClient.java`
 
     Make your client interactive: Users can type at the console and the input goes down the socket
     TIP: you will need to have two Threads:
     one Thread handles command-line I/O (System.in, System.out)
     second Thread handles socket I/O
     Somehow those Threads need to talk to one another
-
-> Take a look at `InteractiveTCPClient.java` instead of `TCPClient.java`!
 
 So I made two threads `IOThread.java` and `SocketThread.java`.
 
@@ -130,7 +146,9 @@ So I made two threads `IOThread.java` and `SocketThread.java`.
 
 The two threads pass data with other by manipulating the `DataPayload.java` object. 
 
-## `java InteractiveTCPClient.java -f`example
+This also supports flags! (-i/-f)
+
+## `java InteractiveTCPClient.java`
 
     elbertcheng$ javac InteractiveTCPClient.java ; javac threading/IOThread.java ; javac threading/SocketThread.java ; javac threading/DataPayload.java ; java InteractiveTCPClient.java
     Welcome to the Interactive TCP Client!
@@ -153,4 +171,7 @@ The two threads pass data with other by manipulating the `DataPayload.java` obje
     Enter a host and port to connect to, separated by a space. An example command is 'djxmmx.net 17'. Enter 'exit' to quit.
     exit
 
-    Exiting the application! Goodbye!</details>
+    Exiting the application! Goodbye!
+
+## `java InteractiveTCPClient.java -f`
+</details>
