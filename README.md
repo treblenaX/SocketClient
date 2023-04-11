@@ -174,4 +174,32 @@ This also supports flags! (-i/-f)
     Exiting the application! Goodbye!
 
 ## `java InteractiveTCPClient.java -f`
+
+    elbertcheng$ javac threading/SocketThread.java ; javac threading/IOThread.java ; javac threading/DataPayload.java ; javac InteractiveTCPClient.java ; java InteractiveTCPClient.java -f
+    Welcome to the Interactive TCP Client!
+
+    Please use the -i flag to set the log level to INFO, and the -f flag to set the log level to FINE.
+    If no flag is provided, the log level will be set to SEVERE.
+
+    Log level: FINE
+    Apr 10, 2023 9:10:23 PM threading.IOThread run
+    FINE: [IO] STARTING - IOThread
+    Enter a host and port to connect to, separated by a space. An example command is 'djxmmx.net 17'. Enter 'exit' to quit.
+    djxmmx.net 17
+
+    Apr 10, 2023 9:10:53 PM threading.SocketThread run
+    FINE: [SOCKET] STARTING - SocketThread - djxmmx.net:17...
+    Apr 10, 2023 9:10:53 PM threading.SocketThread run
+    FINE: [SOCKET] CONN_SUCCESS - SocketThread - djxmmx.net:17...
+    Apr 10, 2023 9:10:53 PM threading.SocketThread run
+    INFO: [SOCKET] RECEIVED - "Where's there's smoke, there's Snoop Dogg..."
+            - Arch Bishop Don "Magic" Jaun (Professional Pimp)
+    Apr 10, 2023 9:10:53 PM threading.SocketThread run
+    FINE: [SOCKET] EXIT - SocketThread
+
+    Here's the message you received:
+    ================================
+    "Where's there's smoke, there's Snoop Dogg..."
+            - Arch Bishop Don "Magic" Jaun (Professional Pimp)
+    ================================
 </details>
